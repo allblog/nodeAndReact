@@ -18,16 +18,10 @@ export default class Contato extends Component{
 
   apagar = async () => {
     let { contato } = this.state;
-    console.log(contato);
-    console.log(contato._id);
-    const id = contato._id;
-    let resposta = true;//window.confirm("deseja apagar este contato?");
+    let resposta = window.confirm("deseja apagar este contato?");
     if(resposta === true){
-      alert("apagado")
-      console.log(id);
-      api.delete(`/contato/`, contato._id).catch(function(req,res){
-        console.log(req);
-      })
+      window.location.href = "../";
+      api.delete(`/contato/${contato._id}`)
     }else{
       alert('tudo bem');
     }
