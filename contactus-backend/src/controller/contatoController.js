@@ -16,7 +16,7 @@ module.exports = {
     return res.json(contato);
   },
   async destroy(req, res){
-    await Contatos.findOneAndDelete(req.params.id);
+    await Contatos.findByIdAndRemove(req.params.id);
     return res.send();
   }
 }
